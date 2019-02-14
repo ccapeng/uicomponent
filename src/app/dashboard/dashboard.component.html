@@ -1,0 +1,19 @@
+<h2 class="cc-h">Components</h2>
+<div class="cc-section-panel cc-panel cc-panel-body cc-panel-border">
+  <div class="cc-indent-lg">
+    <ul class="cc-list row cc-flex-list">
+      <li *ngFor="let uicomp of uicomps" class="col-md-3 col-sm-12">
+        <ng-container [ngSwitch]="uicomp?.link">
+          <ng-container *ngSwitchCase="'true'">
+            <a [routerLink]="['/ui', uicomp.ui]">
+              {{uicomp.name}}
+            </a>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            {{uicomp.name}}
+          </ng-container>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+</div>

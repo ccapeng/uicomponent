@@ -1,0 +1,11 @@
+<div class="cc-section">
+  <div class="cc-h-area">
+    <h1 class="cc-h">{{ uiName }}</h1>
+  </div>
+  <div *ngFor="let uiItem of uiItems" class="cc-section cc-panel">
+    <h2 class="cc-h cc-panel-header">{{ uiItem.title }}</h2>
+    <div class="cc-panel-body">
+      <app-ui-item [item]="uiItem"></app-ui-item>
+    </div>
+  </div>
+</div>
