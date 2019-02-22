@@ -1,0 +1,112 @@
+<form>
+    <input type="hidden" name="cId" value="cId">
+    <span class="cc-label" id="lb-fwd">E-mail Forward</span>
+    <label class="cc-switch cc-js-switch" for="switch-2">
+        <input type="checkbox" id="switch-2" class="cc-switch-input" checked aria-checked="true" aria-labelledby="lb-fwd" onclick="return toggleSwitch(this.checked)">
+        <div class="cc-switch-track">
+            <span class="cc-switch-focus"></span>
+        </div>
+    </label>
+    <span class="cc-switch-label">Enabled</span>
+</form>
+<div class="cc-snackbar cc-js-snackbar" id="cid-snackbar">
+    <div class="cc-snackbar-content"></div>
+</div>
+ <script>
+// var disableMsgI18n = "Do you want to disable it?";
+// var enabledI18n = "Enabled";
+// var disabledI18n = "Disabled";
+
+// function toggleSwitch(flag) {
+//     function _submit() {
+//         callback = function(data) {
+//             if (flag) {
+//                 $("#switch").prop("checked", true);
+//                 $(".cc-switch-label").text(enabledI18n);
+//             } else {
+//                 $("#switch").prop("checked", false);
+//                 $(".cc-switch-label").text(disabledI18n);
+//             }
+//             ...
+//         };
+//         var url = "sample-snackbar.js"; // js output from server side
+//         CC.ajax({
+//             url: url,
+//             dataType: "script",
+//             success: callback
+//         });
+//     }
+
+//     if (!flag) {
+//         if (!confirm(disableMsgI18n)) {
+//             return false;
+//         }
+//     }
+//     ...
+//     _submit();
+//     return true;
+// }
+// (function() {
+//   var snackbarContainer = document.querySelector("#cid-snackbar");
+//   var msg = "The settings have been saved successfully.";
+//   var msgType = "success";
+//   var data = {
+//     content: msg,
+//     timeout: "10000",
+//     status: msgType
+//   };
+//   snackbarContainer.MaterialSnackbar.showSnackbar(data);
+// })();
+// </script>
+
+<pre class="code">
+  &lt;form&gt;
+  &lt;input type="hidden" name="cId" value="cId"&gt;
+  &lt;span class="cc-label" id="lb-fwd"&gt;E-mail Forward&lt;/span&gt;
+  &lt;label class="cc-switch cc-js-switch" for="switch-2"&gt;
+    &lt;i class="sr-only"&gt;Switch On&lt;/i&gt;
+    &lt;input type="checkbox" id="switch-2" class="cc-switch-input" checked
+  aria-checked="true" aria-labelledby="lb-fwd"
+  onclick="return toggleSwitch(this.checked)"&gt;
+    &lt;span class="cc-switch-label"&gt;Enabled&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+&lt;div class="cc-snackbar cc-js-snackbar" id="cid-snackbar"&gt;
+  &lt;div class="cc-snackbar-content"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var disableMsgI18n = "Do you want to disable it?";
+var enabledI18n = "Enabled";
+var disabledI18n = "Disabled";
+function toggleSwitch(flag){
+  function _submit(){
+    callback = function(data) {
+      if(flag) {
+        $("#switch").prop("checked",true);
+        $(".cc-switch-label").text(enabledI18n);
+      } else {
+        $("#switch").prop("checked",false);
+        $(".cc-switch-label").text(disabledI18n);
+      }
+      ...
+    };
+    var url = "sample-snackbar.js"; // js output from server side
+    CC.ajax({
+      url: url,
+      dataType: "script",
+      success: callback
+    });
+  }
+
+  if(!flag){
+    if(!confirm(disableMsgI18n) ){
+      return false;
+    }
+  }
+  ...
+  _submit();
+  return true;
+}
+&lt;/script&gt;
+
+</pre>
